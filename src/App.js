@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import { SpecialCharacterKeyboard } from "./lib";
 
 function App() {
+  const onClick = (e) => {
+    console.log(e);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +24,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <input></input>
+        <SpecialCharacterKeyboard onClick={onClick}></SpecialCharacterKeyboard>
+      </body>
     </div>
   );
 }
