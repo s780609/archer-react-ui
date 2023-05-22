@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile":"babel src/lib --out-dir dist --copy-files"
+    "compile": "babel src/lib --out-dir dist --copy-files && node-sass src/lib/components -o dist/components/"
   },
   "eslintConfig": {
     "extends": [
@@ -43,7 +43,17 @@
     "cross-env": "^7.0.3",
     "node-sass": "^7.0.3"
   },
-  "main":"dist/index.js",
-  "files":["dist","README"],
-  "keywords":["react", "react-component", "component", "components","ui", "frontend"]
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "components",
+    "ui",
+    "frontend"
+  ]
 }
