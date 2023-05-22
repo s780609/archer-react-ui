@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import { SpecialCharacterKeyboard } from "./lib";
+import { Recorder } from "./lib";
 
 function App() {
   const onClick = (e) => {
@@ -27,6 +28,7 @@ function App() {
       <body>
         <input></input>
         <SpecialCharacterKeyboard onClick={onClick}></SpecialCharacterKeyboard>
+        <Recorder></Recorder>
       </body>
     </div>
   );

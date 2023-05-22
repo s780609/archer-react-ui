@@ -1,0 +1,62 @@
+.main-controls {
+  padding: 0.5rem 0;
+}
+
+.visualizer {
+  width: 100%;
+  height: 60px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#recorder-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#recorder-buttons button {
+  font-size: 1rem;
+  padding: 1rem;
+  width: calc(50% - 0.25rem);
+}
+
+.recorder-button {
+  font-size: 1rem;
+  background: #0088cc;
+  text-align: center;
+  color: white;
+  border: none;
+  transition: all 0.2s;
+  padding: 0.5rem;
+}
+
+.recorder-button:hover,
+.recorder-button:focus {
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+  background: #0ae;
+}
+
+.recorder-button:active {
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+/* Make the clips use as much space as possible, and
+* also show a scrollbar when there are too many clips to show
+* in the available space */
+.sound-clips {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Adjustments for wider screens */
+@media all and (min-width: 800px) {
+  /* Don't take all the space as readability is lost when line length
+ goes past a certain size */
+  .wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
