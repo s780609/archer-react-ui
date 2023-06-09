@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 
-import "./recorder.css";
+if (typeof window !== undefined){
+   import("./recorder.css");
+}
 
 function Recorder({ onClose }) {
   const record = useRef();

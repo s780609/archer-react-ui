@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./specialCharacterKeyboard.css";
+if (typeof window !== undefined) {
+  import("./specialCharacterKeyboard.css");
+}
 
 function SpecialCharacterKeyboard({ onClick }) {
   const symbolStyle = {
@@ -66,7 +68,7 @@ function SpecialCharacterKeyboard({ onClick }) {
       e.targetElement = targetElement.current;
       e.value = targetElement.current.value;
 
-      if (typeof onClick === "function"){
+      if (typeof onClick === "function") {
         onClick(e);
       }
 
