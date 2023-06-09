@@ -17,3 +17,16 @@ return <>
     <SpecialCharacterKeyboard></SpecialCharacterKeyboard>
 </>
 ```
+
+## Recorder
+網頁用錄音器
+```javascript
+import { Recorder } from "archer-react-ui";
+
+// ...
+// ...
+
+return <>
+    <Recorder></Recorder>
+</>
+```

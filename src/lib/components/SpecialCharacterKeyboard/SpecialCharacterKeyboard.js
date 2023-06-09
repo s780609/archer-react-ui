@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./specialCharacterKeyboard.scss";
+import "./specialCharacterKeyboard.css";
 
 function SpecialCharacterKeyboard({ onClick }) {
   const symbolStyle = {

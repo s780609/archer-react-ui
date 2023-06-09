@@ -1,4 +1,4 @@
 import SpecialCharacterKeyboard from "./components/SpecialCharacterKeyboard/SpecialCharacterKeyboard";
-import Recorder from "./components/recorder/recorder";
+import Recorder from "./components/Recorder/Recorder";
 
 export { SpecialCharacterKeyboard, Recorder };
