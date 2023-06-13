@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-if (typeof window !== undefined) {
-  import("./specialCharacterKeyboard.css");
-}
+import styled from "styled-components";
 
 function SpecialCharacterKeyboard({ onClick }) {
   const symbolStyle = {
@@ -76,9 +74,39 @@ function SpecialCharacterKeyboard({ onClick }) {
     }
   };
 
+  const SpecialCharacterKeyboard = styled.div`
+    display: block;
+    position: fixed;
+    width: 3rem;
+    line-height: 3rem;
+    background: #0d6efd !important;
+    color: "white";
+    text-align: center;
+    top: 50%;
+    right: 0;
+    margin-top: -2rem;
+    padding: 1rem 0 1rem 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: background-color var(1);
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: -0.25rem 0 1rem rgba(0, 0, 0, 0.15);
+
+    button {
+      background-color: "#AA7D24";
+
+      &:hover {
+        background-color: rgb(179, 147, 88) !important;
+      }
+    }
+  `;
+
   return (
     <>
-      <div className="special-character-keyboard">
+      <SpecialCharacterKeyboard>
         <button onClick={handleKeyword} style={symbolStyle}>
           <span>{"^"}</span>
         </button>
@@ -100,7 +128,7 @@ function SpecialCharacterKeyboard({ onClick }) {
         <button onClick={handleKeyword} style={symbolStyle}>
           {":"}
         </button>
-      </div>
+      </SpecialCharacterKeyboard>
     </>
   );
 }

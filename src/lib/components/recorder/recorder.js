@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-if (typeof window !== undefined){
-   import("./recorder.css");
-}
+import styled from "styled-components";
 
 function Recorder({ onClose }) {
   const record = useRef();
@@ -142,26 +140,65 @@ function Recorder({ onClose }) {
     }
   };
 
+  const MainControls = styled.section`
+    padding: 0.5rem 0;
+  `;
+  const Visualizer = styled.canvas`
+    width: 100%;
+    height: 60px;
+    display: block;
+    margin-bottom: 0.5rem;
+  `;
+  const RecorderButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  `;
+  const RecorderButton = styled.button`
+    font-size: 1rem;
+    background: #0088cc;
+    text-align: center;
+    color: white;
+    border: none;
+    transition: all 0.2s;
+    padding: 0.5rem;
+    padding: 1rem;
+    width: calc(50% - 0.25rem);
+    &:hover {
+      box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+      background: #0ae;
+    }
+    &:focus {
+      box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+      background: #0ae;
+    }
+    &:active {
+      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(2px);
+    }
+  `;
+
+  const SoundClips = styled.section`
+    flex: 1;
+    overflow: auto;
+  `;
+
   return (
     <>
-      <section ref={mainSection} className="main-controls">
-        <canvas ref={canvas} className="visualizer" height="60px"></canvas>
-        <div id="recorder-buttons">
-          <button ref={record} className="recorder-button">
-            Record
-          </button>
-          <button ref={stop} className="recorder-button">
-            Stop
-          </button>
-        </div>
+      <MainControls ref={mainSection}>
+        <Visualizer ref={canvas} height="60px"></Visualizer>
+        <RecorderButtons>
+          <RecorderButton ref={record}>Record</RecorderButton>
+          <RecorderButton ref={stop}>Stop</RecorderButton>
+        </RecorderButtons>
         <br></br>
         <div>
-          <button className="recorder-button w-full" onClick={closeRecorder}>
+          <RecorderButton className="w-full" onClick={closeRecorder}>
             結束錄音
-          </button>
+          </RecorderButton>
         </div>
-      </section>
-      <section ref={soundClips} className="sound-clips"></section>
+      </MainControls>
+      <SoundClips ref={soundClips}></SoundClips>
     </>
   );
 }
