@@ -2,6 +2,52 @@ import React, { useRef, useState, useEffect } from "react";
 
 import styled from "styled-components";
 
+const MainControls = styled.section`
+padding: 0.5rem 0;
+`;
+
+const Visualizer = styled.canvas`
+width: 100%;
+height: 60px;
+display: block;
+margin-bottom: 0.5rem;
+`;
+
+const RecorderButtons = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`;
+
+const RecorderButton = styled.button`
+font-size: 1rem;
+background: #0088cc;
+text-align: center;
+color: white;
+border: none;
+transition: all 0.2s;
+padding: 0.5rem;
+padding: 1rem;
+width: calc(50% - 0.25rem);
+&:hover {
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+  background: #0ae;
+}
+&:focus {
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
+  background: #0ae;
+}
+&:active {
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+`;
+
+const SoundClips = styled.section`
+flex: 1;
+overflow: auto;
+`;
+
 function Recorder({ onClose }) {
   const record = useRef();
   const stop = useRef();
@@ -139,49 +185,6 @@ function Recorder({ onClose }) {
       onClose(audioBlobUrl);
     }
   };
-
-  const MainControls = styled.section`
-    padding: 0.5rem 0;
-  `;
-  const Visualizer = styled.canvas`
-    width: 100%;
-    height: 60px;
-    display: block;
-    margin-bottom: 0.5rem;
-  `;
-  const RecorderButtons = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  `;
-  const RecorderButton = styled.button`
-    font-size: 1rem;
-    background: #0088cc;
-    text-align: center;
-    color: white;
-    border: none;
-    transition: all 0.2s;
-    padding: 0.5rem;
-    padding: 1rem;
-    width: calc(50% - 0.25rem);
-    &:hover {
-      box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
-      background: #0ae;
-    }
-    &:focus {
-      box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
-      background: #0ae;
-    }
-    &:active {
-      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
-      transform: translateY(2px);
-    }
-  `;
-
-  const SoundClips = styled.section`
-    flex: 1;
-    overflow: auto;
-  `;
 
   return (
     <>
